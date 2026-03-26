@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
-    public float jump = 2f;
     public float gravity = -9.81f;
     
     private CharacterController cc;
@@ -24,11 +23,6 @@ public class PlayerMovement : MonoBehaviour
         if (cc.isGrounded && cc.velocity.y < 0)
         {
             velocity.y = -2f;
-        }
-
-        if (Input.GetButtonDown("Jump") && cc.isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jump * 2f * gravity); 
         }
         
         velocity.y += gravity * Time.deltaTime;
