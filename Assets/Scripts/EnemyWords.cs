@@ -2,8 +2,20 @@ using UnityEngine;
 
 public class EnemyWords : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    
+    void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+       
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+            if (player != null)
+            {
+                player.TakeHit(20f); // every bullet +20%
+            }
+            
+            Destroy(gameObject);
+        }
+        
     }
 }

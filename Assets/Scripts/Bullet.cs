@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Word"))
         {
             Destroy(collision.gameObject); // destroy cannonball
-            Destroy(gameObject); // optionally destroy bullet too
+            Destroy(gameObject); // destroy bullet
         }
     }
 }

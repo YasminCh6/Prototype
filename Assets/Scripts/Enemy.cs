@@ -83,16 +83,35 @@ public class Enemy : MonoBehaviour
 
     private void FireCannon()
     {
-        // Instantiate the cannonball at the stationary ball's position
-        GameObject newCannonBall = Instantiate(cannonBallPrefab, stationaryCannonBall.position, Quaternion.identity);
 
-        // Get the Rigidbody component and apply force
-        Rigidbody rb = newCannonBall.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.AddForce(cannon.transform.forward * -launchForce); // Note the negative sign, since we rotated the cannon 180 degrees
-        }
 
-        Destroy(newCannonBall, 3f);
+            // Instantiate the cannonball at the stationary ball's position
+            GameObject newCannonBall1 = Instantiate(cannonBallPrefab, stationaryCannonBall.position, Quaternion.identity);
+            GameObject newCannonBall2 = Instantiate(cannonBallPrefab, stationaryCannonBall.position, Quaternion.identity);
+            GameObject newCannonBall3 = Instantiate(cannonBallPrefab, stationaryCannonBall.position, Quaternion.identity);
+
+        
+        
+            // Get the Rigidbody component and apply force
+            Rigidbody rb1 = newCannonBall1.GetComponent<Rigidbody>();
+            Rigidbody rb2 = newCannonBall2.GetComponent<Rigidbody>();
+            Rigidbody rb3 = newCannonBall3.GetComponent<Rigidbody>();
+            if (rb1 != null)
+            {
+                rb1.AddForce(cannon.transform.forward * -launchForce); // Note the negative sign, since we rotated the cannon 180 degrees
+            }
+            if (rb2 != null)
+            {
+                rb2.AddForce(cannon.transform.forward * -launchForce); // Note the negative sign, since we rotated the cannon 180 degrees
+            }
+            if (rb3 != null)
+            {
+                rb3.AddForce(cannon.transform.forward * -launchForce); // Note the negative sign, since we rotated the cannon 180 degrees
+            }
+
+            Destroy(newCannonBall1, 3f);
+            Destroy(newCannonBall1, 3f);
+            Destroy(newCannonBall1, 3f);
+           
     }
 }

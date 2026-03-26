@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4748fc8322e683c49b9bc097db6f7d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyWords
+  speed: 5
 --- !u!54 &-2249187672501313998
 Rigidbody:
   m_ObjectHideFlags: 0
