@@ -660,6 +660,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195330221}
   m_CullTransparentMesh: 1
+--- !u!1 &225521382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 225521383}
+  - component: {fileID: 225521384}
+  m_Layer: 0
+  m_Name: SpawnPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &225521383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225521382}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.9434943, z: -0, w: -0.33138865}
+  m_LocalPosition: {x: 0.15800008, y: 0.293, z: -0.7620001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 806749627}
+  m_LocalEulerAnglesHint: {x: 0, y: -218.706, z: 0}
+--- !u!114 &225521384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225521382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e26340fdedc466d9bd3f366ac8c9c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileSpawner
+  cannonBallPrefab: {fileID: 6755457417545408373, guid: f5452619e75d5154e82673ae19ec1c27, type: 3}
+  timeBetweenShots: 1
 --- !u!1 &282669970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +1900,8 @@ Transform:
   - {fileID: 81020930}
   - {fileID: 614495201}
   - {fileID: 1025654985}
+  - {fileID: 1859772130}
+  - {fileID: 225521383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 359.809, z: 0}
 --- !u!114 &806749628
@@ -1881,10 +1929,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   cannon: {fileID: 806749622}
-  cannonBallPrefab: {fileID: 6755457417545408373, guid: f5452619e75d5154e82673ae19ec1c27, type: 3}
-  stationaryCannonBall: {fileID: 1025654985}
-  launchForce: 500
-  timeBetweenShots: 2
   rotationSpeed: 50
 --- !u!114 &806749630
 MonoBehaviour:
@@ -1956,6 +2000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1025654985}
+  - component: {fileID: 1025654986}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -1971,13 +2016,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025654984}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.293, z: -0.655}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000238535}
+  m_LocalPosition: {x: 0.000000086561315, y: 0.293, z: -0.762}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 806749627}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!114 &1025654986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025654984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e26340fdedc466d9bd3f366ac8c9c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileSpawner
+  cannonBallPrefab: {fileID: 6755457417545408373, guid: f5452619e75d5154e82673ae19ec1c27, type: 3}
+  timeBetweenShots: 1
 --- !u!1 &1037414312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,6 +3064,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1859772129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1859772130}
+  - component: {fileID: 1859772131}
+  m_Layer: 0
+  m_Name: SpawnPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1859772130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859772129}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.96094006, z: -0, w: 0.2767567}
+  m_LocalPosition: {x: -0.21700005, y: 0.293, z: -0.7620001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 806749627}
+  m_LocalEulerAnglesHint: {x: 0, y: -147.867, z: 0}
+--- !u!114 &1859772131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859772129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e26340fdedc466d9bd3f366ac8c9c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileSpawner
+  cannonBallPrefab: {fileID: 6755457417545408373, guid: f5452619e75d5154e82673ae19ec1c27, type: 3}
+  timeBetweenShots: 1
 --- !u!1 &2047362517
 GameObject:
   m_ObjectHideFlags: 0

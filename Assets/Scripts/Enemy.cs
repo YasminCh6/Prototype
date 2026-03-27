@@ -6,24 +6,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
    public GameObject cannon;
-    public GameObject cannonBallPrefab;
-    public Transform stationaryCannonBall;
 
-    public float launchForce;
-    public float timeBetweenShots;
     public float rotationSpeed;
-    private float timeSinceLastShot;
-    private float firingAngleThreshold = 5f;
-
     private bool rotateBack;
+    
 
 
 
-    private void Update()
-    {
-        // Increment how much time has passed since the last shot was fired
-        timeSinceLastShot += Time.deltaTime;
-    }
+    
 
 
 
@@ -43,11 +33,11 @@ public class Enemy : MonoBehaviour
             float angle = Quaternion.Angle(cannon.transform.rotation, targetRotation);
 
             // Fire if within angle threshold
-            if (angle < firingAngleThreshold && timeSinceLastShot >= timeBetweenShots)
-            {
-                FireCannon();
-                timeSinceLastShot = 0f;
-            }
+            // if (angle < firingAngleThreshold && timeSinceLastShot >= timeBetweenShots)
+            // {
+            //     FireCannon();
+            //     timeSinceLastShot = 0f;
+            // }
         }
     }
 
@@ -55,10 +45,10 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            rotateBack = true;
-        }
+        // if (other.tag == "Player")
+        // {
+        //     rotateBack = true;
+        // }
     }
 
 
@@ -81,37 +71,5 @@ public class Enemy : MonoBehaviour
 
 
 
-    private void FireCannon()
-    {
-
-
-            // Instantiate the cannonball at the stationary ball's position
-            GameObject newCannonBall1 = Instantiate(cannonBallPrefab, stationaryCannonBall.position, Quaternion.identity);
-            GameObject newCannonBall2 = Instantiate(cannonBallPrefab, stationaryCannonBall.position, Quaternion.identity);
-            GameObject newCannonBall3 = Instantiate(cannonBallPrefab, stationaryCannonBall.position, Quaternion.identity);
-
-        
-        
-            // Get the Rigidbody component and apply force
-            Rigidbody rb1 = newCannonBall1.GetComponent<Rigidbody>();
-            Rigidbody rb2 = newCannonBall2.GetComponent<Rigidbody>();
-            Rigidbody rb3 = newCannonBall3.GetComponent<Rigidbody>();
-            if (rb1 != null)
-            {
-                rb1.AddForce(cannon.transform.forward * -launchForce); // Note the negative sign, since we rotated the cannon 180 degrees
-            }
-            if (rb2 != null)
-            {
-                rb2.AddForce(cannon.transform.forward * -launchForce); // Note the negative sign, since we rotated the cannon 180 degrees
-            }
-            if (rb3 != null)
-            {
-                rb3.AddForce(cannon.transform.forward * -launchForce); // Note the negative sign, since we rotated the cannon 180 degrees
-            }
-
-            Destroy(newCannonBall1, 3f);
-            Destroy(newCannonBall1, 3f);
-            Destroy(newCannonBall1, 3f);
-           
-    }
+    
 }
