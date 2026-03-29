@@ -3,7 +3,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Rigidbody myRigidbody;
-    public float speed = 10f;
+    public float speed = 30f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,11 +12,11 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, 3f);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "Projectile")
-            {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
             Destroy(gameObject);
-            }
+        }
     }
 }

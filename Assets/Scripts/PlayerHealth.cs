@@ -29,6 +29,8 @@ public class PlayerHealth : MonoBehaviour
 
     }
     
+    
+    
     void Start()
     {
         UpdateUI(); 

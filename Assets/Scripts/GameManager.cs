@@ -4,15 +4,25 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject gameExit;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gameOverScreen.SetActive(false);   
+        gameExit.SetActive(false);
     }
 
     public void TriggerGameOver()
     {
         gameOverScreen.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void TriggerGameExit()
+    {
+        gameExit.SetActive(true);
         Time.timeScale = 0f;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
