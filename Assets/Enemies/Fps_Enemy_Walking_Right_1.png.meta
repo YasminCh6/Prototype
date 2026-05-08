@@ -115,7 +115,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 130
+        width: 128
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -135,9 +135,9 @@ TextureImporter:
       name: Fps_Enemy_Walking_Right_1_1
       rect:
         serializedVersion: 2
-        x: 130
+        x: 128
         y: 0
-        width: 130
+        width: 128
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -157,9 +157,9 @@ TextureImporter:
       name: Fps_Enemy_Walking_Right_1_2
       rect:
         serializedVersion: 2
-        x: 260
+        x: 256
         y: 0
-        width: 130
+        width: 128
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -179,9 +179,9 @@ TextureImporter:
       name: Fps_Enemy_Walking_Right_1_3
       rect:
         serializedVersion: 2
-        x: 390
+        x: 384
         y: 0
-        width: 130
+        width: 128
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -201,9 +201,9 @@ TextureImporter:
       name: Fps_Enemy_Walking_Right_1_4
       rect:
         serializedVersion: 2
-        x: 520
+        x: 512
         y: 0
-        width: 130
+        width: 128
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -215,6 +215,28 @@ TextureImporter:
       bones: []
       spriteID: 0812da8d7c3217b428f7d95f09a0919b
       internalID: 1046474965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fps_Enemy_Walking_Right_1_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00136479b306ad146ba8c2b9796a1054
+      internalID: 2010209058
       vertices: []
       indices: 
       edges: []
@@ -233,13 +255,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":130.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Fps_Enemy_Walking_Right_1_0: 536075001
       Fps_Enemy_Walking_Right_1_1: -1710272295
       Fps_Enemy_Walking_Right_1_2: -1060419854
       Fps_Enemy_Walking_Right_1_3: 191109515
       Fps_Enemy_Walking_Right_1_4: 1046474965
+      Fps_Enemy_Walking_Right_1_5: 2010209058
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
