@@ -7,7 +7,7 @@ public class Shoot : MonoBehaviour
     public Transform spawnPoint;
     
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {

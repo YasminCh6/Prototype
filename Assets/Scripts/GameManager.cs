@@ -1,15 +1,22 @@
+using System;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject gameExit;
+    
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gameOverScreen.SetActive(false);   
         gameExit.SetActive(false);
+        
     }
 
     public void TriggerGameOver()
@@ -34,4 +41,5 @@ public class GameManager : MonoBehaviour
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    
 }
