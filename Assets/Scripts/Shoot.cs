@@ -9,7 +9,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
         }

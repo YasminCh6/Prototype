@@ -2229,7 +2229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acf32d6eb9e4334dace2c35104a7f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shoot
-  prefab: {fileID: 1026326554890906438, guid: 060febfa09f2b5a488f49b575a270ba5, type: 3}
+  prefab: {fileID: 1631113969885996459, guid: f0ef18fa6e883794f94099de33284960, type: 3}
   spawnPoint: {fileID: 1278426419}
 --- !u!114 &1188539877
 MonoBehaviour:
@@ -2415,7 +2415,7 @@ Transform:
   m_GameObject: {fileID: 1278426418}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.083, y: 0.358, z: 1.318}
+  m_LocalPosition: {x: 0.083, y: 0.358, z: 1.403}
   m_LocalScale: {x: 0.28474015, y: 0.24383739, z: 0.25886217}
   m_ConstrainProportionsScale: 0
   m_Children: []
