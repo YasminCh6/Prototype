@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
     public float gravity = -9.81f;
-    
+
+    public Collectible cm;
     private CharacterController cc;
     private Vector3 velocity;
     
@@ -27,5 +29,14 @@ public class PlayerMovement : MonoBehaviour
         
         velocity.y += gravity * Time.deltaTime;
         cc.Move(velocity * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Collectable"))
+        {
+            cm.CollectibleCount++;
+            
+        }
     }
 }
