@@ -39,21 +39,21 @@ public class SimpleDynamicCrosshair : MonoBehaviour {
 
             // If we have assigned a rigidbody, check if its velocity is not zero. If so, return true.
             if (playerRigidbody != null)
-                if (playerRigidbody.linearVelocity.sqrMagnitude != 0)
-                    return true;
-                else
-                    return false;
+                return !Mathf.Approximately(playerRigidbody.linearVelocity.sqrMagnitude, 0);
 
+            return true;
+
+            // NOTE: This is extra - I've commented it out because you're not really using it.
             // If not rigidbody is assigned, check Input axis' instead.
-            if (
-                Input.GetAxis("Horizontal") != 0 ||
-                Input.GetAxis("Vertical") != 0 ||
-                Input.GetAxis("Mouse X") != 0 ||
-                Input.GetAxis("Mouse Y") != 0
-            )
-                return true;
-            else
-                return false;
+            // if (
+            //     Input.GetAxis("Horizontal") != 0 ||
+            //     Input.GetAxis("Vertical") != 0 ||
+            //     Input.GetAxis("Mouse X") != 0 ||
+            //     Input.GetAxis("Mouse Y") != 0
+            // )
+            //     return true;
+            // else
+            //     return false;
 
         }
 
