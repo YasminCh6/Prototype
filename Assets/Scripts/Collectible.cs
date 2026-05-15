@@ -1,19 +1,22 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
-
-public class Collectible : MonoBehaviour
+class Collectible : MonoBehaviour
 {
-    public int CollectibleCount;
-    void Start()
+    
+    Dictionary<string, List<bool>> coinsCollected =
+        new Dictionary<string, List<bool>>();
+    
+    private List<bool> CurrentSceneCoins()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        List<bool> sceneCoins;
+        string ShootingScene = SceneManager.GetActiveScene().name;
+        if (!coinsCollected.TryGetValue(ShootingScene, out sceneCoins))
+        {
+            sceneCoins = new List<bool>();
+            coinsCollected[ShootingScene] = sceneCoins;
+        }
+        return sceneCoins;
+   
 }

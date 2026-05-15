@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WeaponZoom : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class WeaponZoom : MonoBehaviour
     void Update()
     {
         // 1 = Right Mouse Button
-        if (Input.GetMouseButton(1))
+        if (Mouse.current.rightButton.isPressed)
         {
             // Zoom In
             fpsCamera.fieldOfView = Mathf.Lerp(fpsCamera.fieldOfView, zoomFOV, Time.deltaTime * zoomSpeed);

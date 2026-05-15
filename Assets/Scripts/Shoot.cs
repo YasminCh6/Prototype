@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,13 +7,14 @@ public class Shoot : MonoBehaviour
 {
     public GameObject prefab;
     public Transform spawnPoint;
-    
-    // Update is called once per frame
-    private void Update()
+
+    private void Start()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
-        }
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void OnShoot(InputValue value)
+    {
+        Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
     }
 }

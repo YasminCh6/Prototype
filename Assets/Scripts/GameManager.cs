@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
-{
-    [SerializeField] private GameObject gameOverScreen;
-    [SerializeField] private GameObject gameExit;
+{ 
+    public GameObject gameOverScreen;
+    public GameObject gameExit;
+    public GameObject startScreen;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,7 +17,19 @@ public class GameManager : MonoBehaviour
     {
         gameOverScreen.SetActive(false);   
         gameExit.SetActive(false);
-        
+        startScreen.SetActive(true);
+        Time.timeScale = 0f;
+
+    }
+
+    public void PlayGame()
+    {
+      SceneManager.LoadScene("NormalVision");
+    }
+
+    public void GotoMenu()
+    {
+        SceneManager.LoadScene("MusicMenu");
     }
 
     public void TriggerGameOver()

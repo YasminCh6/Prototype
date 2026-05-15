@@ -1,14 +1,16 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
     public float gravity = -9.81f;
 
-    public Collectible cm;
+    
     private CharacterController cc;
     private Vector3 velocity;
+    private Vector3 move;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 move = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
         cc.Move(move * speed * Time.deltaTime);
 
         if (cc.isGrounded && cc.velocity.y < 0)
@@ -30,13 +31,10 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         cc.Move(velocity * Time.deltaTime);
     }
-
-    private void OnTriggerEnter(Collider other)
+    
+    private void OnMove(InputValue value)
     {
-        if (other.gameObject.CompareTag("Collectable"))
-        {
-            cm.CollectibleCount++;
-            
-        }
+        var v2 = value.Get<Vector2>();
+        move = transform.right * v2.x + transform.forward * v2.y;
     }
 }
